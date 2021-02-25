@@ -1,5 +1,6 @@
 export const appData = {
-  pages: ['', 'settings', 'stats'],
+  pages: ['', 'game', 'settings', 'stats'],
+  playMode: 'off',
 }
 
 export default appData;

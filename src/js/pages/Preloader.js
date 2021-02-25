@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import preloadAudio from '../sounds/preloadAudio';
 
 export default class Preloader extends Component {
   constructor() {
@@ -7,6 +8,7 @@ export default class Preloader extends Component {
         open: false,
     }
   }
+
 
   hide() {
     this.setState({
@@ -22,9 +24,12 @@ export default class Preloader extends Component {
 
   componentDidMount() {
     this.show();
+
+    const preloaderWrapper = document.querySelector('.preloader__wrapper');
     const trexImg = document.querySelector('.trex__img');
-    const preloaderWrapper = document.querySelector('.preloader__wrapper')
-    console.log(trexImg);
+    const preloadMessage = document.querySelector('.preload__message');
+
+
     if (trexImg) {
       let posStay = 5;
       let trexMoveImg = -100;
@@ -38,41 +43,34 @@ export default class Preloader extends Component {
       setTimeout(() => {
         clearInterval(dinoMoveIn);
         trexImg.style.backgroundPositionX = `${posStay}px`;
-      }, 2100);
-      let dinoMoveOut;
+        preloadMessage.classList.add('preload__message--on')
+      }, 2000);
+      /*let dinoMoveOut;
       setTimeout(() => {
         trexImg.classList.add('trex__img--out');
+        preloadAudio();
         dinoMoveOut = setInterval(() => { dinoMoving() }, 150);
         preloaderWrapper.classList.add('preloader__off');
       }, 3500)
       setTimeout(() => {
         clearInterval(dinoMoveOut);
         preloaderWrapper.remove()
-      }, 7000);
+      }, 7000);*/
     }
   }
 
   render() {
+    function preloaderClick() {
+      if (document.querySelector('.preload__message--on')) {
+        preloadAudio();
+      }
+    }
+
     return (
-      <div className="preloader__wrapper">
+      <div className="preloader__wrapper" onClick={preloaderClick}>
         <div className="trex__img trex__img--in"></div>
+        <div className="preload__message">click</div>
       </div>
     )
   }
 }
-
-
-
-{/*import React from 'react'
-
-export default function Preloader() {
-  function trexIn() {
-    console.log('asdasdasd')
-  }
-  return (
-    <div className="preloader__wrapper" onClick={trexIn}>
-      <div className="trex__img trex__img--in"></div>
-    </div>
-  )
-}
-*/}

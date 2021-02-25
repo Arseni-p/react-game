@@ -8,6 +8,7 @@
   height: 100vh;
   background-color: var(--white);
   z-index: 100;
+  overflow: hidden;
 }
 
 @keyframes trexIn {
@@ -23,7 +24,7 @@
 .trex__img {
   position: absolute;
   left: -101px;
-  top: calc(50% - 50px);
+  top: calc(50% - 110px);
   width: 100px;
   height: 100px;
   background-image: url('../../assets/img/classic-trex.png');
@@ -46,4 +47,33 @@
 .preloader__off {
   opacity: 0;
   transition: opacity 1.5s linear 2s;
+}
+
+.preload__message {
+  position: absolute;
+  top: calc(50% + 10px);
+  left: 101%;
+  color: var(--black);
+  width: 300px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+
+.preload__message:hover {
+  color: var(--blackOpacity);
+  transition: color 0.3s ease-in-out;
+}
+
+.preload__message--on {
+  left: calc(50% - 150px);
+  transition: left 0.5s ease-out;
+}
+
+.preload__message--off {
+  left: -310px;
+  transition: left 0.5s ease-in 0.5s;
 }

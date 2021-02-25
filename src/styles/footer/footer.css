@@ -65,3 +65,9 @@
   color: var(--whiteOpacity);
   transition: color 0.3s ease-out;
 }
+
+@media(max-width: 768px) {
+  .footer__wrapper {
+    font-size: 0.6rem;
+  }
+}

@@ -12,55 +12,65 @@ import {
 } from "react-router-dom";
 import currentLinkView from './MenuLink';
 
-export default function Components() {
-  function handleClick(e) {
-    e.preventDefault();
-    currentLinkView();
+export default class PagesComponents extends Component {
+  constructor() {
+    super();
+    this.state = {
+        open: false,
+    }
   }
 
-  return (
-    <Router>
-      <div className="app__wrapper">
-        <header className="header__wrapper">
-          <nav className="header__content menu__wrapper" onClick={handleClick}>
-            <ul className="menu__list">
-              <li className="menu__item">
-                <Link className="app-link" to='/' >
-                  <span className="trex-logo"></span>
-                  TREX APP</Link>
-              </li>
-              <li className="menu__item">
-                <Link className="menu__link" to='/' >Home</Link>
-              </li>
-              <li className="menu__item">
-                
-                <Link className="menu__link" to='/settings' >Settings</Link>
-              </li>
-              <li className="menu__item">
-                <Link className="menu__link" to='/stats' >Stats</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main className="main__wrapper">
-          <Switch>
+  render() {
+    function handleClick(e) {
+      e.preventDefault();
+      currentLinkView();
+    }
 
-            <Route path='/Game'>
-              <Game />
-            </Route>
-            <Route path='/Settings'>
-              <Settings />
-            </Route>
-            <Route path='/Stats'>
-              <Stats />
-            </Route>
-            <Route path='/'>
-              <Home />
-            </Route>
-        </Switch>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  )
+    return (
+      <Router>
+        <div className="app__wrapper">
+          <header className="header__wrapper">
+            <nav className="header__content menu__wrapper" onClick={handleClick}>
+              <ul className="menu__list">
+                <li className="menu__item">
+                  <Link className="app-link" to='/' >
+                    <span className="trex-logo"></span>
+                    TREX APP</Link>
+                </li>
+                <li className="menu__item">
+                  <Link className="menu__link" to='/' >Home</Link>
+                </li>
+                <li className="menu__item">
+                  <Link className="menu__link" to='/game' >New game</Link>
+                </li>
+                <li className="menu__item">
+                  <Link className="menu__link" to='/settings' >Settings</Link>
+                </li>
+                <li className="menu__item">
+                  <Link className="menu__link" to='/stats' >Stats</Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <main className="main__wrapper">
+            <Switch>
+              <Route path='/Game'>
+                <Game />
+              </Route>
+              <Route path='/Settings'>
+                <Settings />
+              </Route>
+              <Route path='/Stats'>
+                <Stats />
+              </Route>
+              <Route path='/'>
+                <Home />
+              </Route>
+          </Switch>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    )
+  }
 }

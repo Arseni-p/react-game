@@ -11,9 +11,9 @@
   --blue-dark:#011738;
   --blue-light:#2b80ff;
   --whiteOpacity: rgba(255, 255, 255, 0.5);
+  --blackOpacity: rgba(0, 0, 0, 0.5);
   
-  --blackOpacity: rgba(0, 0, 0, 0.9);
-  --bg-menu-opacity: rgba(0, 0, 0, 0.6);
+    --bg-menu-opacity: rgba(0, 0, 0, 0.6);
   --textOpacity: rgba(0, 0, 0, 0.7);
   --greyBg: #1e2226;
   --redor: #f36348;
