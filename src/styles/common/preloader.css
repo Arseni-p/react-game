@@ -1,0 +1,49 @@
+.preloader__wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  z-index: 100;
+}
+
+@keyframes trexIn {
+  0% {left: -101px};
+  100% {left: calc(50% - 50px)}
+}
+
+@keyframes trexOut {
+  from {left: calc(50% - 50px)};
+  to {left: 101%}
+}
+
+.trex__img {
+  position: absolute;
+  left: -101px;
+  top: calc(50% - 50px);
+  width: 100px;
+  height: 100px;
+  background-image: url('../../assets/img/classic-trex.png');
+  background-repeat: no-repeat;
+  background-position-x: -100px;
+  background-position-y: center;
+  background-size: 600px auto;
+}
+
+.trex__img--in {
+  left: calc(50% - 50px);
+  animation: trexIn 2s ease-out;
+}
+
+.trex__img--out {
+  left: 101%;
+  animation: trexOut 2s ease-in;
+}
+
+.preloader__off {
+  opacity: 0;
+  transition: opacity 1.5s linear 2s;
+}

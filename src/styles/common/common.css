@@ -1,0 +1,105 @@
+@import './fonts.css';
+@import './colors.css';
+
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'PressStart2P', 'Arial Narrow', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  min-width: 500px;
+  max-width: 1200px;
+  border: 1px dashed white;
+  min-height: 100vh;
+  margin: auto auto;
+  background-color: var(--bg-color);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app__wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: white;
+  color: var(--black);
+}
+
+.header__wrapper,
+.main__wrapper,
+.footer__wrapper {
+  border: 1px dashed red;
+}
+
+.main__wrapper {
+  height: auto;
+  flex-grow: 1;
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+  border-radius: 2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a,
+button {
+  outline: none;
+  font-size: inherit;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
+a:active,
+button:active {
+  outline: none;
+  transform: scale(0.9);
+}
+
+.btn.btn-outline-light:focus {
+  box-shadow: none;
+}
+
+.btn.btn-outline-light:active {
+  transform: scale(0.9);
+  transition: transform 0.2s linear;
+}
+
+
+

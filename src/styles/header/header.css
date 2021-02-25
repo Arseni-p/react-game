@@ -1,0 +1,78 @@
+.header__wrapper {
+  padding: 0 20px;
+  background-color: var(--bg-color);
+  color: var(--white);
+}
+
+.menu__list {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.menu__item {
+  margin-right: 30px;
+}
+
+.menu__item:last-child {
+  margin: 0;
+}
+
+.menu__item:nth-child(2) {
+  margin-left: auto;
+}
+
+.app-link,
+.menu__link {
+  position: relative;
+}
+
+.menu__link::after,
+.current-link::before,
+.app-link::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  width: 0;
+  height: 1px;
+  background-color: var(--white);
+}
+
+.current-link::before {
+  width: calc(100% + 10px);
+}
+
+.current-link:hover::before {
+  width: 0;
+}
+
+.menu__link:hover::after,
+.app-link:hover::after {
+  width: calc(100% + 10px);
+}
+
+.menu__link::after,
+.app-link::after,
+.menu__link:hover::after,
+.app-link:hover::after {
+  transition: width 0.2s ease-in;
+}
+
+.app-link {
+  display: flex;
+  align-items: center;
+}
+
+.app-link::after {
+  bottom: -2px;
+}
+
+.trex-logo {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  background: url('../../assets/img/trex-logo.png') no-repeat -30px center;
+  background-size: 60px auto;
+}
