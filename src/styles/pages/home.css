@@ -1,0 +1,30 @@
+.home-menu__wrapper {
+  display: flex;
+  background-color: grey;
+  min-height: calc(100vh - 100px);
+  padding: 20px;
+}
+
+.home-page__content {
+  width: 100%;
+  border: 1px dashed white;
+}
+
+.page__title {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.home-page__menu--wrapper {
+  border: 1px dashed red;
+  width: calc(100% - 100px);
+  margin: 0 auto;
+}
+
+.home-menu__list--wrapper {
+  border: 1px dashed white
+}
+
+.home-menu__list {
+  
+}

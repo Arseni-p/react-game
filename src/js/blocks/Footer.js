@@ -1,7 +1,11 @@
 import React from 'react';
 import logo from '../../assets/img/logo-rs-school.svg';
+import updateLang from '../logic/updateLang';
 
 export default function Footer() {
+  // const footerWrapper = document.querySelector('.header__wrapper');
+  // updateLang(footerWrapper);
+
   return (
     <footer className="footer__wrapper">
       <div className="footer__item logo-rs__wrapper">

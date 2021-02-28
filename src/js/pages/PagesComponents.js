@@ -11,6 +11,7 @@ import {
   Link
 } from "react-router-dom";
 import currentLinkView from './MenuLink';
+import updateLang from '../logic/updateLang';
 
 export default class PagesComponents extends Component {
   constructor() {
@@ -18,6 +19,11 @@ export default class PagesComponents extends Component {
     this.state = {
         open: false,
     }
+  }
+
+  componentDidMount() {
+    const headerWrapper = document.querySelector('.header__wrapper');
+    updateLang(headerWrapper);
   }
 
   render() {
@@ -35,19 +41,20 @@ export default class PagesComponents extends Component {
                 <li className="menu__item">
                   <Link className="app-link" to='/' >
                     <span className="trex-logo"></span>
-                    TREX APP</Link>
+                    <span className="trex-text lang__trex-app">TREX APP</span>
+                    </Link>
                 </li>
                 <li className="menu__item">
-                  <Link className="menu__link" to='/' >Home</Link>
+                  <Link className="menu__link menu__link--home lang__home-link" to='/' >Home</Link>
                 </li>
                 <li className="menu__item">
-                  <Link className="menu__link" to='/game' >New game</Link>
+                  <Link className="menu__link menu__link--play lang__play-link" to='/game' >New game</Link>
                 </li>
                 <li className="menu__item">
-                  <Link className="menu__link" to='/settings' >Settings</Link>
+                  <Link className="menu__link menu__link--settings lang__settings-link" to='/settings' >Settings</Link>
                 </li>
                 <li className="menu__item">
-                  <Link className="menu__link" to='/stats' >Stats</Link>
+                  <Link className="menu__link menu__link--stats lang__stats-link" to='/stats' >Stats</Link>
                 </li>
               </ul>
             </nav>

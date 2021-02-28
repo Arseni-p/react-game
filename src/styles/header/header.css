@@ -27,17 +27,7 @@
   position: relative;
 }
 
-.menu__link::after,
-.current-link::before,
-.app-link::after {
-  content: '';
-  position: absolute;
-  left: -5px;
-  bottom: -5px;
-  width: 0;
-  height: 1px;
-  background-color: var(--white);
-}
+
 
 .current-link::before {
   width: calc(100% + 10px);
@@ -77,10 +67,50 @@
   background-size: 60px auto;
 }
 
+.trex-text {
+  text-transform: uppercase;
+}
+
+@media(max-width: 800px) {
+  .header__wrapper {
+    font-size: 0.9rem;
+  }
+}
+
 
 @media(max-width: 768px) {
   .header__wrapper {
     font-size: 0.6rem;
+  }
+
+  .menu__link::after,
+  .current-link::before,
+  .app-link::after {
+  }
+
+  .menu__link {
+    display: block;
+    font-size: 0;
+    width: 50px;
+    height: 40px;
+    background: no-repeat center;
+    background-size: 35px auto;
+  }
+
+  .menu__link--home {
+    background-image: url('../../assets/img/icon-home.png')
+  }
+
+  .menu__link--play {
+    background-image: url('../../assets/img/icon-play.png')
+  }
+
+  .menu__link--settings {
+    background-image: url('../../assets/img/icon-settings.png')
+  }
+
+  .menu__link--stats {
+    background-image: url('../../assets/img/icon-stats.png')
   }
 
   .menu__item {

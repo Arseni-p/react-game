@@ -1,4 +1,5 @@
 .footer__wrapper {
+  position: relative;
   padding: 0 20px;
   height: 50px;
   display: flex;
@@ -27,8 +28,15 @@
 }
 
 .task-date {
+  position: absolute;
+  left: calc(50% - 40px);
+  bottom: 0;
+  text-align: center;
   letter-spacing: 2px;
   font-weight: lighter;
+  width: 80px;
+  height: 100%;
+  line-height: 50px;
 }
 
 .rslogo-img {
@@ -66,8 +74,18 @@
   transition: color 0.3s ease-out;
 }
 
+@media(max-width: 800px) {
+  .footer__wrapper {
+    font-size: 0.9rem;
+  }
+}
+
 @media(max-width: 768px) {
   .footer__wrapper {
     font-size: 0.6rem;
+  }
+
+  .author__item {
+    font-size: 0;
   }
 }
