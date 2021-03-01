@@ -1,30 +1,245 @@
 .home-menu__wrapper {
   display: flex;
-  background-color: grey;
   min-height: calc(100vh - 100px);
   padding: 20px;
 }
 
 .home-page__content {
   width: 100%;
-  border: 1px dashed white;
+  padding-top: 50px;
 }
 
 .page__title {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .home-page__menu--wrapper {
-  border: 1px dashed red;
+  display: flex;
+  justify-content: center;
   width: calc(100% - 100px);
   margin: 0 auto;
 }
 
 .home-menu__list--wrapper {
-  border: 1px dashed white
+  width: 60%;
+  padding: 20px;
+  display: flex;
 }
 
 .home-menu__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.home-menu__item {
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.home-menu__link,
+.home-menu__rules {
+  position: relative;
+  display: inline-block;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.home-menu__link::after,
+.home-menu__rules::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  width: 0;
+  height: 1px;
+  background-color: var(--bg-color);
+}
+
+.home-menu__link:hover::after,
+.home-menu__rules:hover::after {
+  width: calc(100% + 10px);
+}
+
+.home-menu__link:active,
+.home-menu__rules:active {
+  transform: scale(0.9);
+}
+
+.home-menu__link::after,
+.home-menu__rules::after {
+  transition: width 0.2s ease-in, transform 0.2s linear;
+}
+
+.home-menu__rules {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.home-menu__rules:hover {
+  cursor: pointer;
+}
+
+.home-menu__rules--description {
+  overflow-y: scroll;
+  height: 0;
+  transition: height 1s ease-in-out;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.home-menu__rules--description::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.home-menu__rules--description::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.home-menu__rules--description::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+  border-radius: 2px;
+}
+
+.description__on {
+  height: 150px;
+}
+
+.home-menu__item:last-child,
+.controls__item:last-child {
+  margin-bottom: 0;
+}
+
+.rules-item {
+  height: auto;
+  flex-grow: 1;
+}
+
+.home-menu__controls--wrapper {
+  width: 40%;
+  padding: 20px;
+  font-size: 0.8rem;;
+}
+
+.home-menu__controls--title {
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.controls__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls__item {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.controls__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  font-size: 1.2rem;
+  background: no-repeat center;
+}
+
+.arrow-left,
+.arrow-right {
+  background-size: 80% auto;
+}
+
+.arrow-up,
+.arrow-down {
+  background-size: auto 80%;
+}
+
+.arrow-right {
+  background-image: url('../../assets//img/arrow-right.png');
+}
+
+.arrow-left {
+  background-image: url('../../assets//img/arrow-left.png');
+}
+
+.arrow-up {
+  background-image: url('../../assets//img/arrow-up.png');
+}
+
+.arrow-down {
+  background-image: url('../../assets//img/arrow-down.png');
+}
+
+.e-btn {
+}
+
+
+@media(max-width: 768px) {
+  .home-page__menu--wrapper {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .home-page__content {
+    padding-top: 25px;
+  }
+
+  .page__title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
   
+  .home-menu__list--wrapper,
+  .home-menu__controls--wrapper {
+    width: 100%;
+  }
+
+  .home-menu__list--wrapper {
+    padding-top: 0;
+  }
+
+  .home-menu__item {
+    margin-bottom: 15px;
+  }
+
+  .home-menu__link,
+  .home-menu__rules {
+    font-size: 1rem;
+  }
+
+  .controls__list {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .controls__item {
+    width: 19%;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .controls__img {
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  .controls__text {
+    width: 100%;
+    font-size: 0.6rem;
+    letter-spacing: 0;
+    text-align: center;
+  }
 }

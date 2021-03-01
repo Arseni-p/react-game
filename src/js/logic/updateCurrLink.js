@@ -1,8 +1,8 @@
 import appData from '../data/appData';
-import linkUpdate from '../updateFunctions/linkUpdate';
+import updateLink from './updateLink';
 
 export const updateCurrLink = () => {
-  linkUpdate(appData);
+  updateLink(appData);
 }
 
 export default updateCurrLink;

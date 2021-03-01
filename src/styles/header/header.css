@@ -27,7 +27,21 @@
   position: relative;
 }
 
+.menu__link {
+  display: inline-block;
+}
 
+.menu__link::after,
+.current-link::before,
+.app-link::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  width: 0;
+  height: 1px;
+  background-color: var(--white);
+}
 
 .current-link::before {
   width: calc(100% + 10px);
@@ -77,15 +91,9 @@
   }
 }
 
-
 @media(max-width: 768px) {
   .header__wrapper {
     font-size: 0.6rem;
-  }
-
-  .menu__link::after,
-  .current-link::before,
-  .app-link::after {
   }
 
   .menu__link {
@@ -95,6 +103,7 @@
     height: 40px;
     background: no-repeat center;
     background-size: 35px auto;
+    border: 1px dashed red;
   }
 
   .menu__link--home {

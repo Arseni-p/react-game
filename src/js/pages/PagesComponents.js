@@ -10,7 +10,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import currentLinkView from './MenuLink';
+import currentLinkView from '../logic/currentLinkView';
 import updateLang from '../logic/updateLang';
 
 export default class PagesComponents extends Component {

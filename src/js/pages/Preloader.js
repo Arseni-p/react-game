@@ -4,7 +4,6 @@ import preloaderOff from '../logic/preloaderOff';
 //import getSettings from '../logic/getSettings';
 import updateSettings from '../logic/updateSettings';
 import startSettings from '../data/startSettings';
-
 export default class Preloader extends Component {
   constructor() {
     super();
