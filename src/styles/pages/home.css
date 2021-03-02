@@ -17,8 +17,10 @@
 .home-page__menu--wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: calc(100% - 100px);
   margin: 0 auto;
+  box-shadow: 0 0 20px -5px var(--black);
 }
 
 .home-menu__list--wrapper {
@@ -122,12 +124,12 @@
 .home-menu__controls--wrapper {
   width: 40%;
   padding: 20px;
-  font-size: 0.8rem;;
+  font-size: 0.7rem;;
 }
 
 .home-menu__controls--title {
   margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
   letter-spacing: 1px;
 }
 
@@ -137,7 +139,7 @@
 }
 
 .controls__item {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   display: flex;
   align-items: center;
   letter-spacing: 1px;
@@ -147,21 +149,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   background: no-repeat center;
 }
 
 .arrow-left,
 .arrow-right {
-  background-size: 80% auto;
+  background-size: 70% auto;
 }
 
 .arrow-up,
 .arrow-down {
-  background-size: auto 80%;
+  background-size: auto 70%;
 }
 
 .arrow-right {
@@ -180,14 +182,11 @@
   background-image: url('../../assets//img/arrow-down.png');
 }
 
-.e-btn {
-}
-
 
 @media(max-width: 768px) {
   .home-page__menu--wrapper {
     flex-wrap: wrap;
-    width: 100%;
+    width: calc(100% - 40px);
   }
 
   .home-page__content {
@@ -196,16 +195,12 @@
 
   .page__title {
     font-size: 1.8rem;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
   }
   
   .home-menu__list--wrapper,
   .home-menu__controls--wrapper {
     width: 100%;
-  }
-
-  .home-menu__list--wrapper {
-    padding-top: 0;
   }
 
   .home-menu__item {
@@ -217,22 +212,27 @@
     font-size: 1rem;
   }
 
+  .home-menu__controls--title {
+    text-align: center;
+  }
+
   .controls__list {
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-flow: row nowrap;
+    justify-content: center;
   }
 
   .controls__item {
-    width: 19%;
+    width: fit-content;
     flex-flow: row wrap;
     justify-content: center;
     margin: 0;
+    padding: 0 2px;
   }
 
   .controls__img {
     margin: 0 auto;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     margin-bottom: 5px;
   }
 

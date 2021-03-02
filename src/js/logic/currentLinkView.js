@@ -8,7 +8,6 @@ export const currentLinkView = () => {
     window.event.target.closest('.home-menu__link')) {
     const currentLink = document.querySelector('.current-link');
     currentLink.classList.remove('current-link');
-    console.log('click!!!')
     updateLink(appData);
   }
 }

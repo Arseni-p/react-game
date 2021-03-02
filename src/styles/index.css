@@ -4,3 +4,5 @@
 @import './main/main.css';
 @import './footer/footer.css';
 @import './pages/home.css';
+@import './pages/settings.css';
+@import './pages/stats.css';

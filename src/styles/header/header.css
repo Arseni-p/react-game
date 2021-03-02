@@ -103,7 +103,6 @@
     height: 40px;
     background: no-repeat center;
     background-size: 35px auto;
-    border: 1px dashed red;
   }
 
   .menu__link--home {
@@ -124,5 +123,11 @@
 
   .menu__item {
     margin-right: 20px;
+  }
+
+  .menu__link::after,
+  .current-link::before,
+  .app-link::after {
+    bottom: -2px;
   }
 }

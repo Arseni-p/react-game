@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import currentLinkView from '../logic/currentLinkView';
 import updateLang from '../logic/updateLang';
-
+import linkHoverAudio from '../sounds/linkHoverAudio';
 export default class PagesComponents extends Component {
   constructor() {
     super();
@@ -24,6 +24,16 @@ export default class PagesComponents extends Component {
   componentDidMount() {
     const headerWrapper = document.querySelector('.header__wrapper');
     updateLang(headerWrapper);
+
+    window.addEventListener('mouseover', (event) => {
+      if (
+        window.event.target.closest('a') ||
+        window.event.target.closest('button') ||
+        window.event.target.closest('button')
+        ) {
+        linkHoverAudio()
+      }
+    })
   }
 
   render() {
@@ -31,6 +41,7 @@ export default class PagesComponents extends Component {
       e.preventDefault();
       currentLinkView();
     }
+
 
     return (
       <Router>

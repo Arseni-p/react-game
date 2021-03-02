@@ -79,6 +79,89 @@ export const langApp = {
     'rus': 'Действие',
   },
 
+  'settings--title': {
+    'eng': 'Settings',
+    'rus': 'Настройки',
+  },
+
+  'mode': {
+    'eng': 'Mode',
+    'rus': 'Режим',
+  },
+
+
+
+
+
+
+
+
+  'classic': {
+    'eng': 'Classic',
+    'rus': 'Классический',
+  },
+
+
+  'bchb': {
+    'eng': 'BChB',
+    'rus': 'БЧБ',
+  },
+
+  'navalny': {
+    'eng': 'Navalny',
+    'rus': 'Навальный',
+  },
+
+  'messi': {
+    'eng': 'Messi',
+    'rus': 'Месси',
+  },
+
+  'level': {
+    'eng': 'Level',
+    'rus': 'Уровень',
+  },
+
+  'easy': {
+    'eng': 'Easy',
+    'rus': 'Легкий',
+  },
+
+  'medium': {
+    'eng': 'medium',
+    'rus': 'Средний',
+  },
+
+  'hard': {
+    'eng': 'hard',
+    'rus': 'трудный',
+  },
+
+  'language': {
+    'eng': 'Language',
+    'rus': 'Язык',
+  },
+
+  'eng': {
+    'eng': 'Eng',
+    'rus': 'Англ',
+  },
+
+  'rus': {
+    'eng': 'Rus',
+    'rus': 'Рус',
+  },
+
+  'sounds': {
+    'eng': 'Sounds',
+    'rus': 'Звуки',
+  },
+
+  'music': {
+    'eng': 'Music',
+    'rus': 'Музыка',
+  }
 }
+
 
 export default langApp;
