@@ -1,6 +1,6 @@
 export const startSettings = {
   mode: 'classic',
-  level: 1,
+  level:'easy',
   sound: true,
   soundVolume: 1,
   musicVolume: 1,

@@ -89,16 +89,9 @@ export const langApp = {
     'rus': 'Режим',
   },
 
-
-
-
-
-
-
-
   'classic': {
     'eng': 'Classic',
-    'rus': 'Классический',
+    'rus': 'Обычный',
   },
 
 
@@ -133,8 +126,8 @@ export const langApp = {
   },
 
   'hard': {
-    'eng': 'hard',
-    'rus': 'трудный',
+    'eng': 'Hard',
+    'rus': 'Трудный',
   },
 
   'language': {

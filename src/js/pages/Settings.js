@@ -1,17 +1,49 @@
 import React, { Component } from 'react';
 import updateLang from '../logic/updateLang';
+import classicTrex from '../../assets/img/trex-classic-logo.png';
+import bchbTrex from '../../assets/img/trex-bchb-logo.png';
+import navalnyTrex from '../../assets/img/trex-navalny-logo.png';
+import messiTrex from '../../assets/img/trex-messi-logo.png';
+import appData from '../data/appData'
 
 export default class Settings extends Component {
   constructor(props) {
     super(props);
     this.state = {
       maxSound: 10,
+      soundValue: 4,
+      musValue: 3,
+      value: '',
+      bgMode: [classicTrex, bchbTrex, navalnyTrex, messiTrex]
     }
+
+    this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount() {
+    const localSettings = localStorage.getItem('settings');
+    const currSettings = JSON.parse(localSettings);
+    const currModeElem = document.querySelector(`.mode__input--${currSettings.mode}`);
+    const currLevelElem = document.querySelector(`.level__input--${currSettings.level}`);
+    const currLangElem = document.querySelector(`.language__input--${currSettings.lang}`)
+    currModeElem.defaultChecked = 'true';
+    currLevelElem.defaultChecked = 'true';
+    currLangElem.defaultChecked = 'true';
+    console.log(currLangElem)
     const settingsWrapper = document.querySelector('.settings__wrapper');
     updateLang(settingsWrapper);
+    const modeLabels = document.querySelectorAll('.mode__label');
+    let i = 0;
+    modeLabels.forEach(item => {
+      item.style.backgroundImage = `url(${this.state.bgMode[i]})`;
+      i++;
+    });
+  }
+
+  handleChange(event) {
+    this.setState({
+      value: event.target.value
+    })
   }
 
   render() {
@@ -54,11 +86,11 @@ export default class Settings extends Component {
             <li className="settings__item">
               <p className="settings__item--title lang__language">Language</p>
               <div className="settings__value--wrapper">
-                <input className="language__input language__setting language__input--eng visually-hidden" type="radio" name="language" id="language__eng" value="eng" ></input>
-                <label className="language__label language__label__eng lang__eng" htmlFor="language__eng">Eng</label>
+                <input className="language__input language__setting language__input--eng visually-hidden" type="radio" name="language" id="language__eng" value="eng"></input>
+                <label className="language__label language__label--eng lang__eng" htmlFor="language__eng">Eng</label>
                 
                 <input className="language__input language__setting language__input--rus visually-hidden" type="radio" name="language" id="language__rus" value="rus"></input>
-                <label className="language__label language__label__rus lang__rus" htmlFor="language__rus">Rus</label>
+                <label className="language__label language__label--rus lang__rus" htmlFor="language__rus">Rus</label>
               </div>
             </li>
 
@@ -66,7 +98,7 @@ export default class Settings extends Component {
               <p className="settings__item--title lang__sounds">Sounds</p>
               <div className="settings__value--wrapper">
                 <span className="sounds__off"></span>
-                <input type="range" min="0" max={this.state.maxSound} step="any"></input>
+                <input type="range" min="0" max={this.state.maxSound} step="1" value={this.state.soundValue}></input>
                 <span className="sounds__value"></span>
               </div>
             </li>
@@ -75,7 +107,9 @@ export default class Settings extends Component {
               <p className="settings__item--title lang__music">Music</p>
               <div className="settings__value--wrapper">
                 <span className="music__off"></span>
-                <input type="range" min="0" max={this.state.maxSound} step="any"></input>
+                <input type="range" min="" max={this.state.maxSound} step="1"
+                  
+                ></input>
                 <span className="music__value"></span>
               </div>
             </li>
