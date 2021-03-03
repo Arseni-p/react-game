@@ -73,6 +73,7 @@ a,
 button {
   outline: none;
   font-size: inherit;
+  font-family: inherit;
 }
 
 a:hover,

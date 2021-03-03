@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function Game() {
-  return (
-    <div>
-      <p>Game mode</p>
-    </div>
-  )
+export default class Game extends Component {
+  render() {
+    return (
+      <div>
+        
+      </div>
+    )
+  }
 }
+

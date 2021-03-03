@@ -4,6 +4,8 @@ import classicTrex from '../../assets/img/trex-classic-logo.png';
 import bchbTrex from '../../assets/img/trex-bchb-logo.png';
 import navalnyTrex from '../../assets/img/trex-navalny-logo.png';
 import messiTrex from '../../assets/img/trex-messi-logo.png';
+import updateSettingsPage from '../logic/updateSettingsPage';
+import saveSettings from '../logic/saveSettings';
 import appData from '../data/appData'
 
 export default class Settings extends Component {
@@ -11,25 +13,19 @@ export default class Settings extends Component {
     super(props);
     this.state = {
       maxSound: 10,
-      soundValue: 4,
-      musValue: 3,
+      soundValue: 5,
+      musValue: 5,
       value: '',
       bgMode: [classicTrex, bchbTrex, navalnyTrex, messiTrex]
     }
 
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChangeSound = this.handleChangeSound.bind(this);
+    this.handleChangeMus = this.handleChangeMus.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
-    const localSettings = localStorage.getItem('settings');
-    const currSettings = JSON.parse(localSettings);
-    const currModeElem = document.querySelector(`.mode__input--${currSettings.mode}`);
-    const currLevelElem = document.querySelector(`.level__input--${currSettings.level}`);
-    const currLangElem = document.querySelector(`.language__input--${currSettings.lang}`)
-    currModeElem.defaultChecked = 'true';
-    currLevelElem.defaultChecked = 'true';
-    currLangElem.defaultChecked = 'true';
-    console.log(currLangElem)
+    updateSettingsPage();
     const settingsWrapper = document.querySelector('.settings__wrapper');
     updateLang(settingsWrapper);
     const modeLabels = document.querySelectorAll('.mode__label');
@@ -40,10 +36,24 @@ export default class Settings extends Component {
     });
   }
 
-  handleChange(event) {
+  handleChangeSound(e) {
+    const musicVal = document.querySelector('.music__value');
     this.setState({
-      value: event.target.value
+      soundValue: e.target.value,
+      musValue: musicVal.textContent,
     })
+  }
+
+  handleChangeMus(e) {
+    const soundVal = document.querySelector('.sounds__value');
+    this.setState({
+      musValue: e.target.value,
+      soundValue: soundVal.textContent,
+    })
+  }
+
+  handleSubmit(e) {
+    saveSettings()
   }
 
   render() {
@@ -54,7 +64,7 @@ export default class Settings extends Component {
           <ul className="settings__list">
             <li className="settings__item">
               <p className="settings__item--title lang__mode">Mode</p>
-              <div className="settings__value--wrapper">
+              <div className="settings__value--wrapper mode__list">
                 <input className="mode__input mode__setting mode__input--classic visually-hidden" type="radio" name="mode" id="mode__classic" value="classic"></input>
                 <label className="mode__label mode__label__classic lang__classic" htmlFor="mode__classic">Classic</label>
                 
@@ -96,24 +106,22 @@ export default class Settings extends Component {
 
             <li className="settings__item">
               <p className="settings__item--title lang__sounds">Sounds</p>
-              <div className="settings__value--wrapper">
-                <span className="sounds__off"></span>
-                <input type="range" min="0" max={this.state.maxSound} step="1" value={this.state.soundValue}></input>
-                <span className="sounds__value"></span>
+              <div className="settings__value--wrapper range__settings">
+                <input className="slider sound__input" type="range" min="0" max={this.state.maxSound} step="1" value={this.state.soundValue} onChange={this.handleChangeSound}></input>
+                <span className="sounds__value">{this.state.soundValue}</span>
               </div>
             </li>
 
             <li className="settings__item">
               <p className="settings__item--title lang__music">Music</p>
-              <div className="settings__value--wrapper">
-                <span className="music__off"></span>
-                <input type="range" min="" max={this.state.maxSound} step="1"
-                  
-                ></input>
-                <span className="music__value"></span>
+              <div className="settings__value--wrapper range__settings">
+                <input className="slider mus__input" type="range" min="0" max={this.state.maxSound} step="1" value={this.state.musValue} onChange={this.handleChangeMus}></input>
+                <span className="music__value">{this.state.musValue}</span>
               </div>
             </li>
           </ul>
+
+          <button className="settings__submit lang__settings--submit" type="button" onClick={this.handleSubmit}>Save</button>
         </form>
       </div>
     )

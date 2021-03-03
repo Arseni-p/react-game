@@ -29,7 +29,8 @@ export default class PagesComponents extends Component {
       if (
         window.event.target.closest('a') ||
         window.event.target.closest('button') ||
-        window.event.target.closest('button')
+        window.event.target.closest('label') ||
+        window.event.target.closest('.home-menu__rules')
         ) {
         linkHoverAudio()
       }

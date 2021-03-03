@@ -153,6 +153,11 @@ export const langApp = {
   'music': {
     'eng': 'Music',
     'rus': 'Музыка',
+  },
+
+  'settings--submit': {
+    'eng': 'Save',
+    'rus': 'Сохранить'
   }
 }
 
