@@ -4,9 +4,8 @@ export const startSettings = {
   sound: true,
   soundVolume: 1,
   musicVolume: 1,
-  playMode: true,//change on FALSE !!!
-  lang: 'rus',
-  //change on ENG !!!
+  playMode: false,//change on FALSE !!!
+  lang: 'eng', //change on ENG !!!
 }
 
 export default startSettings;

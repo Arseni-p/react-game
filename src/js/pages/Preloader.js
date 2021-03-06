@@ -29,7 +29,7 @@ export default class Preloader extends Component {
       updateSettings(startSettings);
     }
 
-    if (!this.state.playMode) {
+    if (!this.state.playMode) {//change on FALSE
       function preloaderClick() {
         if (document.querySelector('.preload__message--on')) {
           preloaderOff();

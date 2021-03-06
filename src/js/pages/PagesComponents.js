@@ -13,6 +13,8 @@ import {
 import currentLinkView from '../logic/currentLinkView';
 import updateLang from '../logic/updateLang';
 import linkHoverAudio from '../sounds/linkHoverAudio';
+import playMusic from '../sounds/playMusic';
+
 export default class PagesComponents extends Component {
   constructor() {
     super();
@@ -38,6 +40,7 @@ export default class PagesComponents extends Component {
   }
 
   render() {
+    
     function handleClick(e) {
       e.preventDefault();
       currentLinkView();

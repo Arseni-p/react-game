@@ -15,7 +15,7 @@ export const langApp = {
   },
 
   'play-link': {
-    'eng': 'Play',
+    'eng': 'New game',
     'rus': 'Играть',
   },
 
@@ -121,7 +121,7 @@ export const langApp = {
   },
 
   'medium': {
-    'eng': 'medium',
+    'eng': 'Medium',
     'rus': 'Средний',
   },
 

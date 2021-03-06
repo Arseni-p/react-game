@@ -6,7 +6,8 @@ import navalnyTrex from '../../assets/img/trex-navalny-logo.png';
 import messiTrex from '../../assets/img/trex-messi-logo.png';
 import updateSettingsPage from '../logic/updateSettingsPage';
 import saveSettings from '../logic/saveSettings';
-import appData from '../data/appData'
+import appData from '../data/appData';
+import playMode from '../sounds/playMode';
 
 export default class Settings extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class Settings extends Component {
 
     this.handleChangeSound = this.handleChangeSound.bind(this);
     this.handleChangeMus = this.handleChangeMus.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +35,21 @@ export default class Settings extends Component {
       item.style.backgroundImage = `url(${this.state.bgMode[i]})`;
       i++;
     });
+
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.mode__input')) {
+        const modeInputs = document.querySelectorAll('.mode__input');
+        let inputItem;
+        modeInputs.forEach(item => {
+          if (item.checked) {
+            return inputItem = item.value
+          }
+        });
+        let indexMode = appData.mode.indexOf(inputItem)
+        playMode(indexMode);
+      }
+    })
+    
   }
 
   handleChangeSound(e) {

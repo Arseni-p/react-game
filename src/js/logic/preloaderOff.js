@@ -1,4 +1,5 @@
-import { preloadAudio } from "../sounds/preloadAudio";
+import preloadAudio from '../sounds/preloadAudio';
+import playMusic from '../sounds/playMusic';
 
 export const preloaderOff = () => {
   let posStay = 5;
@@ -28,6 +29,7 @@ export const preloaderOff = () => {
     trexImg.classList.add('trex__img--out');
     dinoMoveOut = setInterval(() => { dinoMoving() }, 100);
     preloaderWrapper.classList.add('preloader__off');
+    playMusic()
   }, 3500);
   
   setTimeout(() => {
